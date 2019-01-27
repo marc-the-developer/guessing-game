@@ -1,21 +1,25 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package guessinggame;
 
-/**
- *
- * @author marchill
- */
+import java.util.Random;
+import java.util.Scanner;
+
 public class GuessGame {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        int n, guess;
+        
+        Random rand = new Random();
+        Scanner input = new Scanner(System.in);
+        
+        n = rand.nextInt(20);
+        System.out.print("I'm thinking of a number between 0-20.  What is the number? ");
+        guess = input.nextInt();
+
+        if (guess == n) {
+            System.out.println("You got it!");
+        } else {
+            System.out.println("Nope.  The number is " + n);
+        }
     }
     
 }
