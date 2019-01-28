@@ -12,7 +12,7 @@ public class GuessGame {
         Scanner input = new Scanner(System.in);
 
         n = rand.nextInt(20);
-        
+
         System.out.print("I'm thinking of a number between 0-20.  What is the number? ");
 
         do {
@@ -21,7 +21,12 @@ public class GuessGame {
             if (guess == n) {
                 System.out.println("You got it!");
             } else {
-                System.out.print("Nope.  Try again: ");
+                if (guess > n) {
+                    System.out.print("Nope. Too high. Try again: ");
+                }
+                if (guess < n) {
+                    System.out.print("Nope. Too low. Try again: ");
+                }
             }
         } while (guess != n);
     }
