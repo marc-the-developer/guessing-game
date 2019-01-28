@@ -7,7 +7,8 @@ public class GuessGame {
 
     public static void main(String[] args) {
         int n, guess;
-
+        int count = 1;
+        
         Random rand = new Random();
         Scanner input = new Scanner(System.in);
 
@@ -19,13 +20,15 @@ public class GuessGame {
             guess = input.nextInt();
 
             if (guess == n) {
-                System.out.println("You got it!");
+                System.out.println("You got it in " + count + " tries!");
             } else {
                 if (guess > n) {
                     System.out.print("Nope. Too high. Try again: ");
+                    count++;
                 }
                 if (guess < n) {
                     System.out.print("Nope. Too low. Try again: ");
+                    count++;
                 }
             }
         } while (guess != n);
